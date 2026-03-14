@@ -1,0 +1,162 @@
+/* Общие настройки страницы */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  background-color: #ffdee9;
+  background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+  font-family: "Nunito", sans-serif;
+  overflow: hidden; /* Чтобы сердечки не растягивали страницу */
+}
+
+/* Контейнер для открытки */
+.card-container {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+
+/* Сама карточка */
+.card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 500px; /* Максимальная ширина открытки */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  /* Анимация появления */
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Заголовок */
+h1 {
+  font-family: "Caveat", cursive; /* Рукописный шрифт */
+  font-size: 3.5rem;
+  color: #d63384; /* Розовый цвет */
+  margin: 0;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 5px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Блок с картинкой */
+.image-wrapper {
+  width: 100%;
+  height: 300px; /* Высота под картинку */
+  margin-bottom: 25px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 5px solid #fff0f5; /* Нежная рамка */
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Картинка заполнит блок, не искажаясь */
+  display: block;
+}
+
+/* Текст поздравления */
+.message {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.signature {
+  font-family: "Caveat", cursive;
+  font-size: 1.8rem;
+  color: #d63384;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.footer {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+/* Анимация сердечек на фоне */
+.heart {
+  position: absolute;
+  color: rgba(255, 105, 180, 0.4);
+  font-size: 2rem;
+  animation: float 6s infinite ease-in-out;
+  z-index: 0;
+}
+
+.heart:nth-child(1) {
+  top: 10%;
+  left: 10%;
+  animation-duration: 7s;
+  font-size: 3rem;
+}
+.heart:nth-child(2) {
+  bottom: 20%;
+  right: 10%;
+  animation-duration: 9s;
+  font-size: 4rem;
+}
+.heart:nth-child(3) {
+  top: 50%;
+  left: 80%;
+  animation-duration: 8s;
+  font-size: 2.5rem;
+}
+
+/* Настройки анимаций */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+/* Адаптивность для телефонов */
+@media (max-width: 600px) {
+  .card {
+    padding: 20px;
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .image-wrapper {
+    height: 250px;
+  }
+}
